@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aslana – Vereins- & Verbandsverwaltung</title>
+<meta name="description" content="Aslana – die moderne Plattform für Vereine und Verbände. Mitgliederverwaltung, Kassenbuch, Projektmanagement und mehr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(160deg, #1a5c5a 0%, #186361 30%, #145856 60%, #0f4a48 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #ffffff;
+  }
+
+  .container {
+    text-align: center;
+    max-width: 640px;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .logo span {
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .feature {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+  }
+
+  .feature:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .feature .icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 2rem;
+  }
+
+  .contact-section {
+    margin-bottom: 2rem;
+  }
+
+  .contact-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .contact-form select {
+    appearance: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .contact-form select option {
+    background: #1a5c5a;
+    color: #fff;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus,
+  .contact-form select:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .contact-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .contact-link a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: color 0.2s;
+  }
+
+  .contact-link a:hover {
+    color: #ffffff;
+  }
+
+  .footer {
+    margin-top: 2.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .footer a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+
+  .footer a:hover { color: rgba(255, 255, 255, 0.6); }
+
+  @media (max-width: 480px) {
+    .logo { font-size: 2.5rem; }
+    .tagline { font-size: 1rem; }
+    .features { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="logo">Aslana</div>
+
+  <p class="tagline">
+    Die moderne Plattform für Vereine und Verbände in Deutschland.
+    Mitgliederverwaltung, Kassenbuch, Projekte und mehr – alles an einem Ort.
+  </p>
+
+  <div class="features">
+    <div class="feature"><span class="icon">👥</span> Mitgliederverwaltung</div>
+    <div class="feature"><span class="icon">📒</span> Kassenbuch</div>
+    <div class="feature"><span class="icon">📋</span> Projektmanagement</div>
+    <div class="feature"><span class="icon">📊</span> Umfragen & News</div>
+    <div class="feature"><span class="icon">📄</span> Sitzungen & Protokolle</div>
+    <div class="feature"><span class="icon">✉️</span> Kommunikation</div>
+    <div class="feature"><span class="icon">🛡️</span> DSGVO-konform</div>
+    <div class="feature"><span class="icon">🏛️</span> Verbandshierarchie</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="contact-link">Fragen? <a href="mailto:info@aslana.de">info@aslana.de</a></p>
+
+  <div class="footer">
+    &copy; 2026 Aslana
+    <a href="https://tanner-consulting.de/img/impressum.png" target="_blank">Impressum</a>
+    <a href="https://tanner-consulting.de/DSE/Datenschutzerklaerung_TANNERConsulting.pdf" target="_blank">Datenschutz</a>
+  </div>
+
+</div>
+
+</body>
+</html>
